@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+      android:title="@string/BottomNavHome"
+      android:id="@+id/ItemBottomNavHome"
+      app:showAsAction="ifRoom"
+      android:icon="@drawable/home">
+
+  </item>
+    <item
+        android:title="@string/BottomNavCatalog"
+        android:id="@+id/ItemBottomNavCatalog"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/catalog">
+
+    </item>
+    <item
+        android:title="@string/BottomNavDelivery"
+        android:id="@+id/ItemBottomNavDelivery"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/delivery">
+
+    </item>
+    <item
+        android:title="@string/BottomNavContacts"
+        android:id="@+id/ItemBottomNavContacts"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/contacts">
+
+    </item>
+
+</menu>

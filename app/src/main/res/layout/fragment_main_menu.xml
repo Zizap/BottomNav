@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainMenu">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/mainMenuNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:headerLayout="@layout/main_menu_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/main_menu"
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"
+            app:itemIconSize="30dp"
+            app:subheaderColor="@color/white"
+            >
+
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

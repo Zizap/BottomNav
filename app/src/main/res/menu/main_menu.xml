@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/homeMenu"
+            android:icon="@drawable/home"
+            android:title="@string/BottomNavHome">
+        </item>
+
+        <item
+            android:id="@+id/catalogMenu"
+            android:icon="@drawable/catalog"
+            android:title="@string/BottomNavCatalog">
+        </item>
+        <item
+            android:id="@+id/favoritesMenu"
+            android:icon="@drawable/favorite"
+            android:title="@string/topNavFavorite">
+        </item>
+        <item
+            android:id="@+id/accountMenu"
+            android:icon="@drawable/account"
+            android:title="@string/account">
+        </item>
+        <item
+            android:id="@+id/contactMenu"
+            android:icon="@drawable/contacts"
+            android:title="@string/BottomNavContacts">
+        </item>
+    </group>
+
+    <item android:title="@string/main">
+        <menu>
+
+            <item
+                android:id="@+id/videoMenu"
+                android:icon="@drawable/video"
+                android:title="@string/video">
+            </item>
+            <item
+                android:id="@+id/lovationMenu"
+                android:icon="@drawable/location"
+                android:title="@string/location">
+            </item>
+            <item
+                android:id="@+id/settingMenu"
+                android:icon="@drawable/setting"
+                android:title="@string/topNavSetting">
+            </item>
+
+        </menu>
+    </item>
+</menu>

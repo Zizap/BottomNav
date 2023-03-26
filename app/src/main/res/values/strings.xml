@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NavigationApp</string>
+    <string name="BottomNavHome">Home</string>
+    <string name="BottomNavCatalog">Catalog</string>
+    <string name="BottomNavContacts">Contacts</string>
+    <string name="BottomNavDelivery">Delivery</string>
+    <string name="topNavFavorite">Favorites</string>
+    <string name="topNavSetting">Settings</string>
+    <string name="infoCart">Info</string>
+    <string name="account">Account</string>
+    <string name="main">Main</string>
+    <string name="video">Video</string>
+    <string name="location">Location</string>
+    <string name="tlotr">The Lord of the Rings: The Return of the King</string>
+    <string name="tlotrTime">201m</string>
+    <string name="swep2">Star Wars: Episode II - Attack of the Clones</string>
+    <string name="swep2Time">142m</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
+
