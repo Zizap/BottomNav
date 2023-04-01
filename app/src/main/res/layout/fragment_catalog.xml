@@ -4,140 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CatalogFragment">
+    tools:context=".CatalogFragment"
+    android:background="@color/white">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cart1"
-            android:layout_width="336dp"
-            android:layout_height="200dp"
-            android:layout_margin="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/white"
-            app:cardElevation="0dp"
-            android:focusable="true"
-            android:checkable="true">
+
+        <RelativeLayout
+            android:id="@+id/slyder_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabSlider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabIconTint="@color/color_slider"
+                app:tabIndicatorColor="@android:color/holo_orange_dark"
+                app:tabIndicatorHeight="3dp"
+                app:tabMode="scrollable"
+                app:tabPaddingBottom="8dp"
+                app:tabPaddingTop="15dp"
+                app:tabRippleColor="@android:color/holo_orange_dark"
+                app:tabSelectedTextColor="@android:color/holo_orange_dark"
+                app:tabTextColor="@color/white">
+
+            </com.google.android.material.tabs.TabLayout>
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/cart1">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_below="@id/tabSlider"
+            >
 
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/MovieButt1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_margin="20dp"
-                    android:background="@android:color/holo_orange_dark"
-                    android:textColor="@color/black"
-                    android:text="@string/infoCart" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/cartName1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tlotr"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/white"
-                    android:background="@color/black"
-                    android:padding="5dp">
-
-                </androidx.appcompat.widget.AppCompatTextView>
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/cartTime1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@color/black"
-                    android:padding="5dp"
-                    android:text="@string/tlotrTime"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                </androidx.appcompat.widget.AppCompatTextView>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cart2"
-            android:layout_width="336dp"
-            android:layout_height="200dp"
-            android:layout_margin="20dp"
-            android:checkable="true"
-            android:focusable="true"
-            app:cardElevation="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cart1"
-            app:strokeColor="@color/white"
-            app:strokeWidth="1dp">
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/cart3">
-
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/MovieButt2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:background="@android:color/holo_orange_dark"
-                    android:text="@string/infoCart"
-                    android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/cartName2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@color/black"
-                    android:padding="5dp"
-                    android:text="@string/swep2"
-                    android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                </androidx.appcompat.widget.AppCompatTextView>
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/cartTime2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@color/black"
-                    android:padding="5dp"
-                    android:text="@string/swep2Time"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                </androidx.appcompat.widget.AppCompatTextView>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.viewpager2.widget.ViewPager2>
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

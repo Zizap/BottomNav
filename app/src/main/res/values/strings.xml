@@ -11,10 +11,31 @@
     <string name="main">Main</string>
     <string name="video">Video</string>
     <string name="location">Location</string>
-    <string name="tlotr">The Lord of the Rings: The Return of the King</string>
-    <string name="tlotrTime">201m</string>
-    <string name="swep2">Star Wars: Episode II - Attack of the Clones</string>
-    <string name="swep2Time">142m</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="fantasy">Fantasy</string>
+    <string name="horror">Horror</string>
+    <string name="fantastic">Fantastic</string>
+    <string name="comedy">Comedy</string>
+
+
+    <string name="tlotr">The Lord of the Rings: The Return of the King</string>
+    <string name="swep2">Star Wars: Episode II - Attack of the Clones</string>
+    <string name="harry_potter">Harry Potter and the Philosopher’s Stone</string>
+    <string name="pirates">Pirates of the Caribbean: Curse of the Black Pearl</string>
+    <string name="constantine">Constantine: Lord of Darkness</string>
+    <string name="saw">Saw: Survival Game</string>
+    <string name="major">Major Payne</string>
+
+
+    <string name="constantine_time">121m</string>
+    <string name="pirates_time">143m</string>
+    <string name="harry_potter_time">152m</string>
+    <string name="swep2Time">142m</string>
+    <string name="tlotrTime">201m</string>
+    <string name="sawTime">104m</string>
+    <string name="majorTime">95m</string>
+
 </resources>
 
