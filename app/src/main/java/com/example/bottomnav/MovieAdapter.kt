@@ -4,8 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bottomnav.databinding.FragmentMovieSliderBinding
-import com.example.bottomnav.databinding.FragmentResyclerItemBinding
+import com.example.bottomnav.databinding.FragmentRecyclerItemBinding
 
 // тут все сделано по уроку
 
@@ -13,7 +12,7 @@ class MovieAdapter(private val openDetailsFragment:(MovieModel)->Unit,var movies
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieHolder {
 
-        val binding: FragmentResyclerItemBinding = FragmentResyclerItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding: FragmentRecyclerItemBinding = FragmentRecyclerItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return MovieHolder(binding)
     }
 
@@ -26,7 +25,7 @@ class MovieAdapter(private val openDetailsFragment:(MovieModel)->Unit,var movies
     }
 }
 
-class MovieHolder(val binding: FragmentResyclerItemBinding): RecyclerView.ViewHolder(binding.root){
+class MovieHolder(val binding: FragmentRecyclerItemBinding): RecyclerView.ViewHolder(binding.root){
 
     fun bind(movieModel: MovieModel,openDetailsFragment:(MovieModel)->Unit){
         binding?.cartName1?.text = movieModel.nameMovie.toString()

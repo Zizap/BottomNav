@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bottomnav.databinding.FragmentMainMenuBinding
-import com.example.bottomnav.databinding.FragmentMovieSliderBinding
+import com.example.bottomnav.databinding.FragmentMovieRecyclerBinding
 import java.text.FieldPosition
 
 
 class MovieSlider(val position: Int) : Fragment() {
 
-    private var binding: FragmentMovieSliderBinding? = null
+    private var binding: FragmentMovieRecyclerBinding? = null
     private var movieAdapter: MovieAdapter? = null
     private var movies: ArrayList<MovieModel>? = null
 
@@ -22,7 +22,7 @@ class MovieSlider(val position: Int) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMovieSliderBinding.inflate(inflater,container,false)
+        binding = FragmentMovieRecyclerBinding.inflate(inflater,container,false)
 
         // если позиция таба 0, то грузим фентези, если позиция 1, то фантастику и тд
 
