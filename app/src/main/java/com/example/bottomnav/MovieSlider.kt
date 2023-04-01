@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bottomnav.databinding.FragmentMainMenuBinding
 import com.example.bottomnav.databinding.FragmentMovieRecyclerBinding
-import java.text.FieldPosition
+
 
 
 class MovieSlider(val position: Int) : Fragment() {

@@ -9,7 +9,7 @@ import com.example.bottomnav.databinding.FragmentRecyclerItemBinding
 
 
 
-class RecyclerItem : Fragment() {
+class RecyclerItemFragment : Fragment() {
 
     private var binding: FragmentRecyclerItemBinding? = null
 
