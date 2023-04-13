@@ -3,16 +3,13 @@ package com.example.bottomnav
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import androidx.appcompat.widget.Toolbar
 import com.example.bottomnav.databinding.ActivityMainBinding
+import com.example.bottomnav.fragments.*
 
 class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

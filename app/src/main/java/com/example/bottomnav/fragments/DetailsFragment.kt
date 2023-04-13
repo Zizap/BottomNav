@@ -1,11 +1,10 @@
-package com.example.bottomnav
+package com.example.bottomnav.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.bottomnav.databinding.FragmentCatalogBinding
+import com.example.bottomnav.R
 import com.example.bottomnav.databinding.FragmentDetailsBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 

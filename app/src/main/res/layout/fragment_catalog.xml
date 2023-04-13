@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CatalogFragment"
+    tools:context=".fragments.CatalogFragment"
     android:background="@color/white">
 
 
@@ -19,6 +19,26 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/shopLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/shopButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_orange_dark"
+                    android:textColor="@color/black"
+                    android:text="@string/also_take"
+                    android:drawableRight="@drawable/popcorn"
+                    >
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabSlider"
                 android:layout_width="wrap_content"
@@ -30,25 +50,26 @@
                 app:tabIndicatorColor="@android:color/holo_orange_dark"
                 app:tabIndicatorHeight="3dp"
                 app:tabMode="scrollable"
-                app:tabPaddingBottom="8dp"
-                app:tabPaddingTop="15dp"
                 app:tabRippleColor="@android:color/holo_orange_dark"
                 app:tabSelectedTextColor="@android:color/holo_orange_dark"
-                app:tabTextColor="@color/white">
+                app:tabTextColor="@color/white"
+                android:layout_below="@id/shopLayout">
 
             </com.google.android.material.tabs.TabLayout>
 
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/slider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_below="@id/tabSlider"
-            >
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tabSlider"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
 
 
-        </androidx.viewpager2.widget.ViewPager2>
+            </androidx.viewpager2.widget.ViewPager2>
         </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

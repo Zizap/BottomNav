@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AdminFragment"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_add_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_category"
+            android:textColor="@android:color/holo_orange_dark"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/addCloth_btn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/tv_add_category"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="@string/clothing_category"-->
+<!--            android:background="@android:color/holo_orange_dark"-->
+<!--            android:textColor="@color/black">-->
+
+<!--        </androidx.appcompat.widget.AppCompatButton>-->
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/addAccessories_btn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/addCloth_btn"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="@string/accessories_category"-->
+<!--            android:background="@android:color/holo_orange_dark"-->
+<!--            android:textColor="@color/black">-->
+
+<!--        </androidx.appcompat.widget.AppCompatButton>-->
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/section_enter_categoryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_add_category"
+            android:layout_margin="10dp"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/white"
+            app:startIconTint="@color/white"
+            app:endIconTint="@android:color/holo_red_light"
+            android:hint="@string/enter_name_category"
+            app:hintTextColor="@color/white"
+            app:startIconDrawable="@drawable/shopping"
+            app:endIconMode="clear_text"
+            app:boxStrokeWidthFocused="4dp"
+            android:textColorHint="@color/white"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter_addCategoryName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:background="@android:color/transparent"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addNewCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/section_enter_categoryName"
+            android:layout_marginTop="10dp"
+            android:text="@string/add_category"
+            android:background="@android:color/holo_orange_dark"
+            android:textColor="@color/black">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/add_product_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addNewCategory"
+            android:layout_marginTop="60dp"
+            android:textColor="@android:color/holo_orange_dark"
+            android:text="@string/add_product"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/section_enter_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/add_product_tv"
+            android:layout_margin="10dp"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/white"
+            app:startIconTint="@color/white"
+            app:endIconTint="@android:color/holo_red_light"
+            android:hint="@string/enter_name_product"
+            app:hintTextColor="@color/white"
+            app:startIconDrawable="@drawable/shopping"
+            app:endIconMode="clear_text"
+            app:boxStrokeWidthFocused="4dp"
+            android:textColorHint="@color/white"
+            >
+            
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter_productName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:background="@android:color/transparent"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/section_category_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/section_enter_name"
+            android:layout_margin="10dp"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/white"
+            app:startIconTint="@color/white"
+            app:endIconTint="@android:color/holo_red_light"
+            android:hint="@string/enter_category_product"
+            app:hintTextColor="@color/white"
+            app:startIconDrawable="@drawable/shopping_bag"
+            app:endIconMode="clear_text"
+            app:boxStrokeWidthFocused="4dp"
+            android:textColorHint="@color/white"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter_categoryName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:background="@android:color/transparent"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/section_price_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/section_category_name"
+            android:layout_margin="10dp"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/white"
+            app:startIconTint="@color/white"
+            app:endIconTint="@android:color/holo_red_light"
+            android:hint="@string/enter_price_product"
+            app:hintTextColor="@color/white"
+            app:startIconDrawable="@drawable/money"
+            app:endIconMode="clear_text"
+            app:boxStrokeWidthFocused="4dp"
+            android:textColorHint="@color/white"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter_priceProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:background="@android:color/transparent"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addProduct_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_orange_dark"
+            android:text="@string/add_product"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/section_price_product">
+
+        </androidx.appcompat.widget.AppCompatButton>
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

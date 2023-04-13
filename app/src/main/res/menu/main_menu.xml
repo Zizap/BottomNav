@@ -48,6 +48,11 @@
                 android:icon="@drawable/setting"
                 android:title="@string/topNavSetting">
             </item>
+            <item
+                android:id="@+id/adminSetting"
+                android:icon="@drawable/admin"
+                android:title="@string/admin_setting">
+            </item>
 
         </menu>
     </item>
