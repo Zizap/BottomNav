@@ -13,11 +13,6 @@ class ProductRepository(private val productDao: ProductDao) {
         return productDao.getFilter(nameCategory,priceProduct)
     }
 
-    fun exists(nameCategory: String):
-    LiveData<Boolean> {
-       return productDao.exists(nameCategory)
-    }
-
     fun getFilterCategory(nameCategory:String):
             LiveData<List<ProductModel>>{
         return productDao.getFilterCategory(nameCategory)

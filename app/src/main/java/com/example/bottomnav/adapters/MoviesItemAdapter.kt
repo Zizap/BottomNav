@@ -11,8 +11,6 @@ class MoviesItemAdapter(fragmentActivity:FragmentActivity): FragmentStateAdapter
         return 4
     }
 
-    // если позиция таба 0, то грузим фентези, если позиция 1, то фантастику и тд
-
     override fun createFragment(position: Int): Fragment {
         return when(position){
             0 -> MovieSlider(0)

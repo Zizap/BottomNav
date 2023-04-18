@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding?.nav?.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.ItemBottomNavHome -> supportFragmentManager.beginTransaction().replace(R.id.contentFragment, HomeFragment()).commit()
-                R.id.ItemBottomNavCatalog -> supportFragmentManager.beginTransaction().replace(R.id.contentFragment, CatalogFragment()).commit()
+                R.id.ItemBottomNavCatalog -> supportFragmentManager.beginTransaction().replace(R.id.contentFragment, ShopCatalogFragment()).commit()
                 R.id.ItemBottomNavDelivery -> supportFragmentManager.beginTransaction().replace(R.id.contentFragment, DeliveryFragment()).commit()
                 R.id.ItemBottomNavContacts -> supportFragmentManager.beginTransaction().replace(R.id.contentFragment, ContactsFragment()).commit()
             }

@@ -13,5 +13,19 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:windowFullscreen">true</item>
+        
     </style>
+    
+    <style name="dialogTheme">
+
+        <item
+            name="background">@color/orange
+        </item>
+        
+        <item
+            name="colorOnSurface">@color/black
+        </item>
+
+    </style>
+    
 </resources>

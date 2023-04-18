@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.bottomnav.R
 import com.example.bottomnav.data.MovieBase
@@ -19,6 +20,7 @@ import com.example.bottomnav.viewModels.CategoryFactory
 import com.example.bottomnav.viewModels.CategoryViewModel
 import com.example.bottomnav.viewModels.ProductFactory
 import com.example.bottomnav.viewModels.ProductViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
 class AdminFragment : Fragment(), View.OnClickListener,View.OnKeyListener {
@@ -57,33 +59,39 @@ class AdminFragment : Fragment(), View.OnClickListener,View.OnKeyListener {
 
         binding?.addNewCategory?.setOnClickListener(this)
 
-
         return binding?.root
     }
 
     override fun onClick(view: View) {
         when(view.id) {
-            R.id.addProduct_btn ->{
+            R.id.addProduct_btn -> {
                 if (binding?.enterProductName?.text?.length != 0 && binding?.enterCategoryName?.text?.length != 0 &&
                     binding?.enterPriceProduct?.text?.length != 0) {
-                   // val checkEmpty = productViewModel?.getFilterCategory(binding?.enterCategoryName?.text.toString())?.value
-                    if (productViewModel?.exists(binding?.enterCategoryName?.text.toString())!!) {
-                        createNewProduct()
-                    } else {
-                        Snackbar.make(view,R.string.this_category_does_not_exist,Snackbar.LENGTH_INDEFINITE)
-                            .setAction(R.string.create){
-                                categoryViewModel?.startInsert(binding?.enterCategoryName?.text.toString())
+                    categoryViewModel?.getFilterCategoryName(binding?.enterCategoryName?.text.toString())?.observe(viewLifecycleOwner,
+                        Observer {
+                            if (it.isNotEmpty()){
                                 createNewProduct()
+                                val toast = Toast.makeText((context as FragmentActivity), it.toString(), Toast.LENGTH_SHORT).show()
+                            } else {
+
+                                val builder = MaterialAlertDialogBuilder((context as FragmentActivity),R.style.dialogTheme)
+                                    .setTitle(R.string.attention)
+                                    .setMessage(R.string.this_category_does_not_exist)
+                                    .setPositiveButton(R.string.create) { dialog, which ->
+                                        categoryViewModel?.startInsert(binding?.enterCategoryName?.text.toString())
+                                        createNewProduct()
+                                    }
+                                    .setNegativeButton(R.string.Nocreate) { dialog, which ->
+                                        binding?.enterProductName?.setText("")
+                                        binding?.enterCategoryName?.setText("")
+                                        binding?.enterPriceProduct?.setText("")
+                                    }
+                                    .show()
                             }
-                            .setBackgroundTint(ContextCompat.getColor((context as FragmentActivity),R.color.orange))
-                            .setTextColor(ContextCompat.getColor((context as FragmentActivity), R.color.white))
-                            .setActionTextColor(ContextCompat.getColor((context as FragmentActivity),R.color.black))
-                            .show()
-                    }
+                        })
                 }
             }
             R.id.addNewCategory -> {
-//                val toast = Toast.makeText((context as FragmentActivity), productViewModel?.exists(binding?.enterCategoryName?.text.toString()).toString(), Toast.LENGTH_SHORT).show()
                 if (binding?.enterAddCategoryName?.text?.length != 0) {
                     categoryViewModel?.startInsert(binding?.enterAddCategoryName?.text.toString())
                     binding?.enterAddCategoryName?.setText("")
@@ -99,7 +107,6 @@ class AdminFragment : Fragment(), View.OnClickListener,View.OnKeyListener {
         binding?.enterCategoryName?.setText("")
         binding?.enterPriceProduct?.setText("")
     }
-
 
     override fun onKey(view: View, keyCode: Int, event: KeyEvent): Boolean {
         when(view.id){

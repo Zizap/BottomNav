@@ -30,6 +30,10 @@
     <string name="this_category_does_not_exist">This category does not exist, create it?</string>
     <string name="Nocreate">Do not create</string>
     <string name="create">create</string>
+    <string name="attention">Attention</string>
+    <string name="film_catalog">Films</string>
+    <string name="product_catalog">Products</string>
+
 
     <string name="categories">Categories</string>
     <string name="addCategories">Add categories</string>

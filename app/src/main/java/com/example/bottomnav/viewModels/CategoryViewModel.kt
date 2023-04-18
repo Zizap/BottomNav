@@ -1,8 +1,10 @@
 package com.example.bottomnav.viewModels
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.bottomnav.models.CategoryModel
+import com.example.bottomnav.models.ProductModel
 import com.example.bottomnav.repositories.CategoryRepository
 import kotlinx.coroutines.launch
 
@@ -34,7 +36,10 @@ class CategoryViewModel(private val categoryRepository: CategoryRepository):View
         categoryRepository.deleteAllCategories()
     }
 
-
+    fun getFilterCategoryName(nameCategory:String):
+            LiveData<List<CategoryModel>> {
+        return categoryRepository.getFilterCategoryName(nameCategory)
+    }
 
 
 }

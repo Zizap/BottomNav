@@ -22,15 +22,8 @@ class CatalogFragment : Fragment() {
     ): View? {
         binding = FragmentCatalogBinding.inflate(inflater,container,false)
 
-
-        binding?.shopButton?.setOnClickListener {
-            (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
-                R.id.contentFragment, ShopFragment()).commit()
-        }
-
         binding?.slider?.adapter = MoviesItemAdapter(context as FragmentActivity)
 
-        // Тут все сделано по уроку
 
         val tabLayoutMediator = binding?.tabSlider?.let {
             binding?.slider?.let {

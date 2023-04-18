@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bottomnav.MovieModel
 import com.example.bottomnav.databinding.FragmentRecyclerItemBinding
 
-// тут все сделано по уроку
-
 class MovieAdapter(private val openDetailsFragment:(MovieModel)->Unit, var movies: ArrayList<MovieModel>): RecyclerView.Adapter<MovieHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieHolder {

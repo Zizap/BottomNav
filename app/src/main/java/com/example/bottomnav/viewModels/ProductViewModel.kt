@@ -21,12 +21,6 @@ class ProductViewModel(private val productRepository: ProductRepository): ViewMo
         return productRepository.getFilterCategory(nameCategory)
     }
 
-    fun exists(nameCategory:String):
-            Boolean? {
-        return productRepository.exists(nameCategory).value
-    }
-
-
     fun startInsert(nameProduct:String, categoryProduct:String,priceProduct: String){
         insertProduct(ProductModel(0,nameProduct,categoryProduct,priceProduct))
     }
@@ -50,7 +44,5 @@ class ProductViewModel(private val productRepository: ProductRepository): ViewMo
     fun deleteAllProducts() = viewModelScope.launch {
         productRepository.deleteAllProduct()
     }
-
-
 
 }

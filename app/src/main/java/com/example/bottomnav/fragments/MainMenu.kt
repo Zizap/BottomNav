@@ -30,7 +30,7 @@ class MainMenu : BottomSheetDialogFragment() {
                 }
                 R.id.catalogMenu -> {
                     (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
-                        R.id.contentFragment, CatalogFragment()).commit()
+                        R.id.contentFragment, ShopCatalogFragment()).commit()
                     dismiss()
                 }
                 R.id.favoritesMenu -> {

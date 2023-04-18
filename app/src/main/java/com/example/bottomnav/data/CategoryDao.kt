@@ -3,6 +3,7 @@ package com.example.bottomnav.data
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.bottomnav.models.CategoryModel
+import com.example.bottomnav.models.ProductModel
 
 @Dao
 interface CategoryDao {
@@ -21,5 +22,8 @@ interface CategoryDao {
 
     @Query("SELECT * FROM category_data_table")
     fun getAllCategories(): LiveData<List<CategoryModel>>
+
+    @Query("SELECT * FROM category_data_table WHERE category_name = :nameCategory")
+    fun getFilterCategoryName(nameCategory:String):LiveData<List<CategoryModel>>
 
 }

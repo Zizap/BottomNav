@@ -19,30 +19,13 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/shopLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/shopButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/holo_orange_dark"
-                    android:textColor="@color/black"
-                    android:text="@string/also_take"
-                    android:drawableRight="@drawable/popcorn"
-                    >
-
-                </androidx.appcompat.widget.AppCompatButton>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabSlider"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -53,7 +36,7 @@
                 app:tabRippleColor="@android:color/holo_orange_dark"
                 app:tabSelectedTextColor="@android:color/holo_orange_dark"
                 app:tabTextColor="@color/white"
-                android:layout_below="@id/shopLayout">
+                android:backgroundTint="@color/black">
 
             </com.google.android.material.tabs.TabLayout>
 

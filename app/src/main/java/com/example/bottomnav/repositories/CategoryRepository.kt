@@ -1,7 +1,9 @@
 package com.example.bottomnav.repositories
 
+import androidx.lifecycle.LiveData
 import com.example.bottomnav.data.CategoryDao
 import com.example.bottomnav.models.CategoryModel
+import com.example.bottomnav.models.ProductModel
 
 class CategoryRepository(private val categoryDao: CategoryDao) {
 
@@ -21,5 +23,10 @@ class CategoryRepository(private val categoryDao: CategoryDao) {
 
     suspend fun deleteAllCategories(){
         categoryDao.deleteAllCategories()
+    }
+
+    fun getFilterCategoryName(nameCategory:String):
+            LiveData<List<CategoryModel>> {
+        return categoryDao.getFilterCategoryName(nameCategory)
     }
 }

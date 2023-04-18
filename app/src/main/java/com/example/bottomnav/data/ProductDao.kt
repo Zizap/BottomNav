@@ -28,7 +28,6 @@ interface ProductDao {
     @Query("SELECT * FROM product_data_table WHERE product_category = :nameCategory")
     fun getFilterCategory(nameCategory:String):LiveData<List<ProductModel>>
 
-    @Query("SELECT EXISTS (SELECT 1 FROM product_data_table WHERE product_category = :nameCategory)")
-    fun exists(nameCategory: String): LiveData<Boolean>
+
 }
 //@Query("SELECT EXISTS (SELECT 1 FROM product_data_table WHERE product_category = :nameCategory)")
