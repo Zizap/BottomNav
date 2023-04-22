@@ -1,4 +1,4 @@
-package com.example.bottomnav.fragments
+package com.example.bottomnav.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -52,7 +52,8 @@ class ShopFragment : Fragment() {
         })
         binding?.productCheckBtn?.setOnClickListener(View.OnClickListener {
             (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
-                R.id.contentFragment, ProductShopFragment()).commit()
+                R.id.contentFragment, ProductShopFragment()
+            ).commit()
         })
 //        binding?.productFilterCheckBtn?.setOnClickListener(View.OnClickListener {
 //            (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
@@ -94,7 +95,8 @@ class ShopFragment : Fragment() {
 
     private fun openProductFromCategory(nameCategory:String){
         (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
-            R.id.contentFragment, FilterProductFragment(nameCategory)).commit()
+            R.id.contentFragment, FilterProductFragment(nameCategory)
+        ).commit()
     }
 
 }

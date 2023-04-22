@@ -33,9 +33,6 @@ class CategoryAdapter(private val deleteCategory:(CategoryModel)->Unit,
         categoryList.clear()
         categoryList.addAll(categories)
     }
-
-
-
 }
 
 class CategoryHolder(val binding: CategoriesRecyclerItemBinding): RecyclerView.ViewHolder(binding.root) {
@@ -54,6 +51,5 @@ class CategoryHolder(val binding: CategoriesRecyclerItemBinding): RecyclerView.V
         binding.editCategoryBtn.setOnClickListener(View.OnClickListener {
             editCategory(categories)
         })
-
     }
 }

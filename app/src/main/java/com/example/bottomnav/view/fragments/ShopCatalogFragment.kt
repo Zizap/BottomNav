@@ -1,4 +1,4 @@
-package com.example.bottomnav.fragments
+package com.example.bottomnav.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -30,12 +30,14 @@ class ShopCatalogFragment : Fragment(),View.OnClickListener {
         when (view.id){
             R.id.MovieButt -> {
                 (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
-                    R.id.contentFragment, CatalogFragment()).commit()
+                    R.id.contentFragment, CatalogFragment()
+                ).commit()
             }
 
             R.id.productButt -> {
                 (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
-                    R.id.contentFragment, ShopFragment()).commit()
+                    R.id.contentFragment, ShopFragment()
+                ).commit()
             }
         }
     }

@@ -1,4 +1,4 @@
-package com.example.bottomnav.fragments
+package com.example.bottomnav.view.fragments
 
 import android.os.Bundle
 import android.view.KeyEvent
@@ -54,7 +54,8 @@ class PanelEditProductFragment : BottomSheetDialogFragment(),View.OnKeyListener 
             binding?.editProductPrice?.setText("")
             dismiss()
             (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
-                R.id.contentFragment,ProductShopFragment()).commit()
+                R.id.contentFragment, ProductShopFragment()
+            ).commit()
         })
 
         return binding?.root

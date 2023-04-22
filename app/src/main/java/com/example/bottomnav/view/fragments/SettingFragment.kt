@@ -1,4 +1,4 @@
-package com.example.bottomnav.fragments
+package com.example.bottomnav.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.bottomnav.R
 
-class DeliveryFragment : Fragment() {
+
+class SettingFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -15,7 +16,7 @@ class DeliveryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_delivery, container, false)
+        return inflater.inflate(R.layout.fragment_setting, container, false)
     }
 
 

@@ -1,4 +1,4 @@
-package com.example.bottomnav.fragments
+package com.example.bottomnav.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,17 +25,20 @@ class MainMenu : BottomSheetDialogFragment() {
             when(menuItem.itemId) {
                 R.id.homeMenu -> {
                     (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
-                        R.id.contentFragment, HomeFragment()).commit()
+                        R.id.contentFragment, HomeFragment()
+                    ).commit()
                     dismiss()
                 }
                 R.id.catalogMenu -> {
                     (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
-                        R.id.contentFragment, ShopCatalogFragment()).commit()
+                        R.id.contentFragment, ShopCatalogFragment()
+                    ).commit()
                     dismiss()
                 }
                 R.id.favoritesMenu -> {
                     (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(
-                        R.id.contentFragment, FavoriteFragment()).commit()
+                        R.id.contentFragment, FavoriteFragment()
+                    ).commit()
                     dismiss()
                 }
                 R.id.accountMenu -> {

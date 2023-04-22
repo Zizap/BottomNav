@@ -1,4 +1,4 @@
-package com.example.bottomnav.fragments
+package com.example.bottomnav.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +9,10 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bottomnav.R
 import com.example.bottomnav.adapters.ProductAdapter
 import com.example.bottomnav.data.MovieBase
+import com.example.bottomnav.databinding.FragmentFilterProductBinding
 import com.example.bottomnav.databinding.FragmentProductShopBinding
 import com.example.bottomnav.models.ProductModel
 import com.example.bottomnav.repositories.ProductRepository
@@ -18,9 +20,9 @@ import com.example.bottomnav.viewModels.ProductFactory
 import com.example.bottomnav.viewModels.ProductViewModel
 
 
-class ProductShopFragment : Fragment() {
+class FilterProductFragment(private val nameCategory:String) : Fragment() {
 
-    private var binding: FragmentProductShopBinding? = null
+    private var binding: FragmentFilterProductBinding? = null
     private var productRepository: ProductRepository? = null
     private var productViewModel: ProductViewModel? = null
     private var productFactory: ProductFactory? = null
@@ -30,34 +32,29 @@ class ProductShopFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentProductShopBinding.inflate(inflater,container,false)
+        binding = FragmentFilterProductBinding.inflate(inflater,container,false)
 
         val productDao = MovieBase.getInstance((context as FragmentActivity).application).ProductDAO
         productRepository = ProductRepository(productDao)
         productFactory = ProductFactory(productRepository!!)
         productViewModel = ViewModelProvider(this,productFactory!!).get(ProductViewModel::class.java)
 
-        initRecyclerProducts()
-
-
-        binding?.deleteAllProductBtn?.setOnClickListener(View.OnClickListener {
-            productViewModel?.deleteAllProducts()
-        })
+        initRecyclerFilterProducts()
 
         return binding?.root
     }
 
-    private fun initRecyclerProducts(){
-        binding?.recyclerAllProduct?.layoutManager = LinearLayoutManager(context)
+    private fun initRecyclerFilterProducts(){
+        binding?.recyclerFilterProduct?.layoutManager = LinearLayoutManager(context)
         productAdapter = ProductAdapter({productModel: ProductModel -> deleteProduct(productModel)},
             {productModel: ProductModel -> editProduct(productModel)})
-        binding?.recyclerAllProduct?.adapter = productAdapter
+        binding?.recyclerFilterProduct?.adapter = productAdapter
 
-        displayProducts()
+        displayFilterProducts()
     }
 
-    private fun displayProducts(){
-        productViewModel?.products?.observe(viewLifecycleOwner, Observer {
+    private fun displayFilterProducts(){
+        productViewModel?.getFilterCategory(nameCategory)?.observe(viewLifecycleOwner, Observer {
             productAdapter?.setListProduct(it)
             productAdapter?.notifyDataSetChanged()
         })

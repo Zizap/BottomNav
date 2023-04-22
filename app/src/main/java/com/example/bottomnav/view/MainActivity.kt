@@ -1,11 +1,12 @@
-package com.example.bottomnav
+package com.example.bottomnav.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import com.example.bottomnav.R
 import com.example.bottomnav.databinding.ActivityMainBinding
-import com.example.bottomnav.fragments.*
+import com.example.bottomnav.view.fragments.*
 
 class MainActivity : AppCompatActivity() {
 

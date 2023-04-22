@@ -3,7 +3,7 @@ package com.example.bottomnav.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.bottomnav.fragments.MovieSlider
+import com.example.bottomnav.view.fragments.MovieSlider
 
 class MoviesItemAdapter(fragmentActivity:FragmentActivity): FragmentStateAdapter(fragmentActivity) {
 

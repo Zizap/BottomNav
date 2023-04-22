@@ -1,4 +1,4 @@
-package com.example.bottomnav.fragments
+package com.example.bottomnav.view.fragments
 
 import android.os.Bundle
 import android.view.KeyEvent
@@ -71,7 +71,7 @@ class AdminFragment : Fragment(), View.OnClickListener,View.OnKeyListener {
                         Observer {
                             if (it.isNotEmpty()){
                                 createNewProduct()
-                                val toast = Toast.makeText((context as FragmentActivity), it.toString(), Toast.LENGTH_SHORT).show()
+                                    //val toast = Toast.makeText((context as FragmentActivity), it.toString(), Toast.LENGTH_SHORT).show()
                             } else {
 
                                 val builder = MaterialAlertDialogBuilder((context as FragmentActivity),R.style.dialogTheme)

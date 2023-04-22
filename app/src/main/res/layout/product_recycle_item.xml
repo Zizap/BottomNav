@@ -12,7 +12,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/holo_blue_light">
+            android:background="@android:color/holo_blue_light"
+            android:padding="10dp">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/nameProduct"
@@ -20,10 +21,9 @@
                 android:layout_height="wrap_content"
                 android:text="Food"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
+                android:layout_marginRight="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-
-                app:layout_constraintEnd_toStartOf="@+id/categoryProduct"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -36,9 +36,10 @@
                 android:layout_marginRight="10dp"
                 android:text="@string/accessories_category"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/priceProduct"
+                app:layout_constraintStart_toEndOf="@+id/nameProduct"
                 app:layout_constraintTop_toTopOf="parent">
 
             </androidx.appcompat.widget.AppCompatTextView>
@@ -50,7 +51,7 @@
                 android:layout_marginRight="10dp"
                 android:text="300$"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/editProductBtn"
                 app:layout_constraintTop_toTopOf="parent">
