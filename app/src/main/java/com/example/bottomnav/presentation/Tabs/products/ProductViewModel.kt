@@ -1,24 +1,28 @@
-package com.example.bottomnav.viewModels
+package com.example.bottomnav.presentation.Tabs.products
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.bottomnav.models.ProductModel
-import com.example.bottomnav.repositories.ProductRepository
+import com.example.bottomnav.data.models.ProductModel
+import com.example.bottomnav.data.repositories.ProductRepository
+import com.example.bottomnav.domain.useCase.ProductsUseCase
 import kotlinx.coroutines.launch
 
-class ProductViewModel(private val productRepository: ProductRepository): ViewModel() {
+class ProductViewModel(private val productsUseCase: ProductsUseCase): ViewModel() {
 
-    val products = productRepository.product
+
+    fun loadProducts():LiveData<List<ProductModel>>{
+        return productsUseCase.loadProducts()
+    }
 
     fun getFilter(nameCategory:String,priceProduct:String):
             LiveData<List<ProductModel>> {
-        return productRepository.getFilter(nameCategory,priceProduct)
+        return productsUseCase.getFilter(nameCategory,priceProduct)
     }
 
     fun getFilterCategory(nameCategory:String):
             LiveData<List<ProductModel>> {
-        return productRepository.getFilterCategory(nameCategory)
+        return productsUseCase.getFilterCategory(nameCategory)
     }
 
     fun startInsert(nameProduct:String, categoryProduct:String,priceProduct: String){
@@ -30,19 +34,19 @@ class ProductViewModel(private val productRepository: ProductRepository): ViewMo
     }
 
     fun insertProduct(productModel: ProductModel) = viewModelScope.launch {
-        productRepository.insertProduct(productModel)
+        productsUseCase.insertProduct(productModel)
     }
 
     fun updateProduct(productModel: ProductModel) = viewModelScope.launch {
-        productRepository.updateProduct(productModel)
+        productsUseCase.updateProduct(productModel)
     }
 
     fun deleteProduct(productModel: ProductModel) = viewModelScope.launch {
-        productRepository.deleteProduct(productModel)
+        productsUseCase.deleteProduct(productModel)
     }
 
     fun deleteAllProducts() = viewModelScope.launch {
-        productRepository.deleteAllProduct()
+        productsUseCase.deleteAllProduct()
     }
 
 }

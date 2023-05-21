@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bottomnav.databinding.ProductRecycleItemBinding
-import com.example.bottomnav.models.ProductModel
+import com.example.bottomnav.data.models.ProductModel
 
 class ProductAdapter(private val deleteProduct:(ProductModel)->Unit,
                      private val editProduct:(ProductModel)->Unit):RecyclerView.Adapter<ProductHolder>() {

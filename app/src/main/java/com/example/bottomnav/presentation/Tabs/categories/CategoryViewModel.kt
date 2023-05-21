@@ -1,17 +1,19 @@
-package com.example.bottomnav.viewModels
+package com.example.bottomnav.presentation.Tabs.categories
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.bottomnav.models.CategoryModel
-import com.example.bottomnav.models.ProductModel
-import com.example.bottomnav.repositories.CategoryRepository
+import com.example.bottomnav.data.models.CategoryModel
+import com.example.bottomnav.data.repositories.CategoryRepository
+import com.example.bottomnav.domain.useCase.CategoriesUseCase
+import com.example.bottomnav.domain.useCase.ProductsUseCase
 import kotlinx.coroutines.launch
 
-class CategoryViewModel(private val categoryRepository: CategoryRepository):ViewModel() {
+class CategoryViewModel(private val categoryUseCase: CategoriesUseCase):ViewModel() {
 
-    val categories = categoryRepository.categories
-
+    fun loadCategory():LiveData<List<CategoryModel>>{
+        return categoryUseCase.loadCategories()
+    }
     fun startInsert(nameCategory:String){
         insert(CategoryModel(0,nameCategory))
     }
@@ -21,24 +23,24 @@ class CategoryViewModel(private val categoryRepository: CategoryRepository):View
     }
 
     fun insert(categoryModel: CategoryModel) = viewModelScope.launch{
-        categoryRepository.insertCategory(categoryModel)
+        categoryUseCase.insertCategory(categoryModel)
     }
 
     fun updateCategory(categoryModel: CategoryModel) = viewModelScope.launch{
-        categoryRepository.updateCategory(categoryModel)
+        categoryUseCase.updateCategory(categoryModel)
     }
 
     fun deleteCategory(categoryModel: CategoryModel) = viewModelScope.launch{
-        categoryRepository.deleteCategory(categoryModel)
+        categoryUseCase.deleteCategory(categoryModel)
     }
 
     fun deleteAllCategories() = viewModelScope.launch{
-        categoryRepository.deleteAllCategories()
+        categoryUseCase.deleteAllCategories()
     }
 
     fun getFilterCategoryName(nameCategory:String):
             LiveData<List<CategoryModel>> {
-        return categoryRepository.getFilterCategoryName(nameCategory)
+        return categoryUseCase.getFilterCategoryName(nameCategory)
     }
 
 

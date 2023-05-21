@@ -40,7 +40,7 @@ dependencies {
     def room_version = "2.5.1"
     def lifecycle_version = "2.6.1"
     def arch_version = "2.2.0"
-
+    def koin_android_version = "3.4.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -50,7 +50,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-
+    //room
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
     // To use Kotlin annotation processing tool (kapt)
@@ -70,13 +70,12 @@ dependencies {
     // Annotation processor
     kapt("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
 
-    // retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
-
-    // gson convertor
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-
     //coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+    //koin
+    implementation "io.insert-koin:koin-android:$koin_android_version"
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
 }

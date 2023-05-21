@@ -6,50 +6,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.bottomnav.R
-import com.example.bottomnav.data.MovieBase
 import com.example.bottomnav.databinding.FragmentAdminBinding
-import com.example.bottomnav.repositories.CategoryRepository
-import com.example.bottomnav.repositories.ProductRepository
-import com.example.bottomnav.viewModels.CategoryFactory
-import com.example.bottomnav.viewModels.CategoryViewModel
-import com.example.bottomnav.viewModels.ProductFactory
-import com.example.bottomnav.viewModels.ProductViewModel
+import com.example.bottomnav.presentation.Tabs.categories.CategoryViewModel
+import com.example.bottomnav.presentation.Tabs.products.ProductViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AdminFragment : Fragment(), View.OnClickListener,View.OnKeyListener {
 
     private var binding: FragmentAdminBinding? = null
-    private var categoryRepository: CategoryRepository? = null
-    private var categoryViewModel: CategoryViewModel? = null
-    private var categoryFactory: CategoryFactory? = null
-
-    private var productRepository: ProductRepository? = null
-    private var productViewModel: ProductViewModel? = null
-    private var productFactory: ProductFactory? = null
+    private val categoryViewModel: CategoryViewModel by viewModel()
+    private val productViewModel:ProductViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentAdminBinding.inflate(inflater,container,false)
-
-        val categoryDao = MovieBase.getInstance(context as FragmentActivity).CategoryDAO
-        categoryRepository = CategoryRepository(categoryDao)
-        categoryFactory = CategoryFactory(categoryRepository!!)
-        categoryViewModel = ViewModelProvider(this,categoryFactory!!).get(CategoryViewModel::class.java)
-
-        val productDao = MovieBase.getInstance(context as FragmentActivity).ProductDAO
-        productRepository = ProductRepository(productDao)
-        productFactory = ProductFactory(productRepository!!)
-        productViewModel = ViewModelProvider(this,productFactory!!).get(ProductViewModel::class.java)
-
 
         binding?.enterCategoryName?.setOnKeyListener(this)
         binding?.enterProductName?.setOnKeyListener(this)

@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bottomnav.databinding.CategoriesRecyclerItemBinding
-import com.example.bottomnav.models.CategoryModel
+import com.example.bottomnav.data.models.CategoryModel
 
 
 class CategoryAdapter(private val deleteCategory:(CategoryModel)->Unit,
@@ -39,7 +39,7 @@ class CategoryHolder(val binding: CategoriesRecyclerItemBinding): RecyclerView.V
     fun bind(categories: CategoryModel,
              deleteCategory: (CategoryModel) -> Unit,
              editCategory: (CategoryModel) -> Unit,
-    openProductFromCategory: (nameCategory: String) -> Unit){
+             openProductFromCategory: (nameCategory: String) -> Unit){
 
         binding.nameCategory.text = categories.name
         binding.materialCardView.setOnClickListener (View.OnClickListener {

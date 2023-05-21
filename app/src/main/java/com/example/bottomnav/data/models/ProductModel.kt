@@ -1,4 +1,4 @@
-package com.example.bottomnav.models
+package com.example.bottomnav.data.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

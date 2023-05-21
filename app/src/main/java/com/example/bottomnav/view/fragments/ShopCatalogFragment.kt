@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import com.example.bottomnav.R
 import com.example.bottomnav.databinding.FragmentShopCatalogBinding
+import com.example.bottomnav.presentation.Tabs.categories.ShopFragment
 
 
 class ShopCatalogFragment : Fragment(),View.OnClickListener {

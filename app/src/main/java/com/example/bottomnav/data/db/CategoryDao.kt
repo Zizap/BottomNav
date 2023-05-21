@@ -1,12 +1,13 @@
-package com.example.bottomnav.data
+package com.example.bottomnav.data.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.bottomnav.models.CategoryModel
-import com.example.bottomnav.models.ProductModel
+import com.example.bottomnav.data.models.CategoryModel
 
 @Dao
 interface CategoryDao {
+
+
 
     @Insert
     suspend fun insertCategory(categoryModel: CategoryModel)
