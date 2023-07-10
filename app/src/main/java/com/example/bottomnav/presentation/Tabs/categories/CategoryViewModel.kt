@@ -26,7 +26,7 @@ class CategoryViewModel(private val categoryUseCase: CategoriesUseCase):ViewMode
         categoryUseCase.insertCategory(categoryModel)
     }
 
-    fun updateCategory(categoryModel: CategoryModel) = viewModelScope.launch{
+    private fun updateCategory(categoryModel: CategoryModel) = viewModelScope.launch{
         categoryUseCase.updateCategory(categoryModel)
     }
 

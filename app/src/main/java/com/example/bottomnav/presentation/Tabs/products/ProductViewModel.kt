@@ -37,7 +37,7 @@ class ProductViewModel(private val productsUseCase: ProductsUseCase): ViewModel(
         productsUseCase.insertProduct(productModel)
     }
 
-    fun updateProduct(productModel: ProductModel) = viewModelScope.launch {
+    private fun updateProduct(productModel: ProductModel) = viewModelScope.launch {
         productsUseCase.updateProduct(productModel)
     }
 

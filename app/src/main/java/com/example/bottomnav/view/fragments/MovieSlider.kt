@@ -25,7 +25,6 @@ class MovieSlider(val position: Int) : Fragment() {
     ): View? {
         binding = FragmentMovieRecyclerBinding.inflate(inflater,container,false)
 
-        // если позиция таба 0, то грузим фентези, если позиция 1, то фантастику и тд
 
         if (position == 0){
             movies = ArrayList<MovieModel>()
